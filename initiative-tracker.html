@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <title>Initiative Tracker</title>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="skill-actions.html">Skill Actions</a>
+        <a href="initiative-tracker.html">Initiative Tracker</a>
+        <a href="death-flowchart.html">Death</a>
+    </div>
+      
+      <!-- Use any element to open the sidenav -->
+      
+    <div class="home-icon-flex-container">
+        <img class="menu-button" src="images/menu-pop-out.png" onclick="openNav()">
+        <a href="index.html"><img class="home-button" src="images/absalom-station-home-icon.png" alt="home-icon"></a>
+    </div>
+    
+    <div class="initiative-tracker-container">
+        <h1 class="initiative-tracker-h1" style="color: white;   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Initiative Tracker</h1>
+        <form class="initiative-tracker-form">
+            <label for="name" style="color: white;">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="initiative" style="color: white;">Initiative:</label>
+            <input type="number" id="initiative" name="initiative">
+            <button type="button" onclick="addToTracker()">Add to Tracker</button>
+        </form>
+        <table id="initiative-tracker-table">
+            <tbody id="tracker-body">
+            </tbody>
+        </table>
+    </div>
+      
+    <script>
+    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+        var tracker = []; // array to hold characters and their initiative values
+    
+        function addToTracker() { // function to add characters to the tracker array and sort them by initiative
+            var name = document.getElementById("name").value; // get the name value from the HTML input element
+            var initiative = document.getElementById("initiative").value; // get the initiative value from the HTML input element
+            tracker.push({ name: name, initiative: initiative }); // add the character to the tracker array
+            tracker.sort(function(a, b) { // sort the characters by initiative in descending order
+                return b.initiative - a.initiative;
+            });
+            updateTracker(); // call the updateTracker function to display the updated array
+        }
+        
+        function updateTracker() { // function to update the HTML table with the characters in the tracker array
+            var trackerBody = document.getElementById("tracker-body"); // get the HTML tbody element where the characters will be displayed
+            trackerBody.innerHTML = ""; // clear the previous characters from the table
+            for (var i = 0; i < tracker.length; i++) {
+                var row = document.createElement("tr"); // create a new HTML table row for each character
+                var nameCell = document.createElement("td"); // create a new HTML table cell for the character's name
+                nameCell.innerHTML = tracker[i].name; // set the innerHTML of the name cell to the character's name
+                var initiativeCell = document.createElement("td"); // create a new HTML table cell for the character's initiative
+                initiativeCell.innerHTML = tracker[i].initiative; // set the innerHTML of the initiative cell to the character's initiative
+                row.appendChild(nameCell); // add the name cell to the table row
+                row.appendChild(initiativeCell); // add the initiative cell to the table row
+                trackerBody.appendChild(row); // add the table row to the HTML tbody element
+            }
+        }
+    </script>
+</body>
+</html>

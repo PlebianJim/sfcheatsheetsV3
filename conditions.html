@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <title>Conditions</title>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="skill-actions.html">Skill Actions</a>
+        <a href="initiative-tracker.html">Initiative Tracker</a>
+        <a href="death-flowchart.html">Death</a>
+    </div>
+     
+
+      
+    <div class="home-icon-flex-container">
+        <img class="menu-button" src="images/menu-pop-out.png" onclick="openNav()">
+        <a href="index.html"><img class="home-button" src="images/absalom-station-home-icon.png" alt="home-icon"></a>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+          <img src="images/asleep.png" class="front-image">
+          <h1 class="card-title">Asleep</h1>
+          <div class="back">
+            <p class="condition-card-p">You are sleeping and helpless. While asleep, you take a -10 penalty to Perception checks to notice anything. If you succeed at a Perception check to notice something despite the penalty, you automatically awaken. You are also awoken if you are slapped or wounded. An ally can wake you as a standard action.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/bleeding.png" class="front-image">
+          <h1 class="card-title">Bleeding</h1>
+          <div class="back">
+            <p class="condition-card-p">You take the listed amount of damage at the beginning of your turn each round until this condition ends. Your bleeding can be stopped with a successful DC 15 Medicine check as a standard action, or through the application of any ability that restores Hit Points. If you take two or more bleed effects, you take only the damage from the worst effect.</p>
+          </div>
+        </div>
+        <div class="card">
+            <img src="images/blinded.png" class="front-image">
+            <h1 class="card-title">Blinded</h1>
+            <div class="back">
+              <p class="condition-card-p">You're unable to see. You're flat-footed with a -4 penalty to all Strength and Dexterity checks, as well as opposed Perception checks. All actions that require vision automatically fail. You can't detect other creatures, making them have total concealment (50% miss chance). To move faster than half-speed, you must pass a DC 10 Acrobatics check or fall prone. Prolonged blindness may result in adaptations, allowing you to overcome some of these drawbacks. However, creatures with other precise senses (besides vision) still fail all vision-related checks but don't experience other penalties.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/broken.png" class="front-image">
+            <h1 class="card-title">Broken</h1>
+            <div class="back">
+              <p class="condition-card-p">Weapon: attack and damage rolls take a -2 penalty and can't deal extra effects on a critical hit; armor: AC bonuses are halved and the armor check penalty is doubled; vehicle: -2 penalty to AC, collision DC, and Piloting modifier, and it halves its full speed and MPH; tool or tech that provides bonuses: bonuses are halved.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/burning.png" class="front-image">
+            <h1 class="card-title">Burning</h1>
+            <div class="back">
+              <p class="condition-card-p">You take fire damage at the start of your turn while on fire. Damage is cumulative if there are multiple sources. You can make a Reflex saving throw at the end of the round to remove the burning condition, DC is 10+ fire damage taken. Bonus for consecutive attempts. Can end condition by jumping in water or spend full action to smother the fire and make a new saving throw with a bonus.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/confused.png" class="front-image">
+            <h1 class="card-title">Confused</h1>
+            <div class="back">
+              <p class="condition-card-p">You treat all creatures as enemies, and you must roll on the table to determine your actions.</p>
+              <table style="border: 1px white solid; text-align: center;">
+                <tr style="border: 1px white solid; text-align: center;">
+                  <th style="border: 1px white solid; text-align: center;">D%</th>
+                  <th style="border: 1px white solid; text-align: center;">Effect</th>
+                </tr>
+                <tr style="border: 1px white solid; text-align: center;">
+                  <td style="border: 1px white solid; text-align: center;">1-25</td>
+                  <td style="border: 1px white solid; text-align: center;">Act normally</td>
+                </tr>
+                <tr style="border: 1px white solid; text-align: center;">
+                  <td style="border: 1px white solid; text-align: center;">26-50</td>
+                  <td style="border: 1px white solid; text-align: center;">Do nothing but babble incoherently</td>
+                </tr>
+                <tr style="border: 1px white solid; text-align: center;">
+                  <td style="border: 1px white solid; text-align: center;">51-75</td>
+                  <td style="border: 1px white solid; text-align: center;">Deal 1d8 + Str modifier damage to self with item in hand</td>
+                </tr>
+                <tr style="border: 1px white solid; text-align: center;">
+                  <td style="border: 1px white solid; text-align: center;">76-100</td>
+                  <td style="border: 1px white solid; text-align: center;">Attack nearest creature</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/cowering.png" class="front-image">
+            <h1 class="card-title">Cowering</h1>
+            <div class="back">
+              <p class="condition-card-p">You're frozen with fear. You're flat-footed and can take no actions.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/dazed.png" class="front-image">
+            <h1 class="card-title">Dazed</h1>
+            <div class="back">
+              <p class="condition-card-p">You are unable to act normally. You can take no actions but have no penalty to your AC. A dazed condition typically lasts 1 round.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/dazzled.png" class="front-image">
+            <h1 class="card-title">Dazzled</h1>
+            <div class="back">
+              <p class="condition-card-p">You are unable to see well because of overstimulation of your eyes. You take a -1 penalty to attack rolls and sight-based Perception checks.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/dead.png" class="front-image">
+            <h1 class="card-title">Dead</h1>
+            <div class="back">
+              <p class="condition-card-p">You are dead when you have 0 Hit Points, are not stable, and have no Resolve Points remaining but would lose RP due to dying or taking damage while dying. (See Injury and Death beginning on page 250 for more information.) You can also die from ability damage, ability drain, or negative levels (see page 252), or by taking massive damage (see page 250).</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/deafened.png" class="front-image">
+            <h1 class="card-title">Deafened</h1>
+            <div class="back">
+              <p class="condition-card-p">You can't hear. You take a -4 penalty to initiative checks and opposed Perception checks, and you automatically fail Perception checks based on sound. Characters who remain deafened for a long time grow accustomed to these drawbacks and can overcome some of them.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/dying.png" class="front-image">
+            <h1 class="card-title">Dying</h1>
+            <div class="back">
+              <p class="condition-card-p">You are unconscious and near death. Creatures at 0 Hit Points that have not stabilized are dying. You can take no actions and lose 1 Resolve Point each round at the end of your turn unless you are stabilized. You can spend RP equal to one-quarter your maximum (minimum 1, maximum 3) to stabilize and can spend 1 RP in a later round to gain 1 Hit Point and stay in the fight. Stabilizing or being healed above 0 Hit Points ends the dying condition, as does death. See Injury and Death on page 250 for more information.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/encumbered.png" class="front-image">
+            <h1 class="card-title">Encumbered</h1>
+            <div class="back">
+              <p class="condition-card-p">All of your speeds are reduced by 10 feet, your maximum Dexterity bonus to your Armor Class is reduced to +2, and you take a -5 penalty to Strength- and Dexterity-based checks (or you take your armor's armor check penalty, whichever is worse).</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/entangled.png" class="front-image">
+            <h1 class="card-title">Entangled</h1>
+            <div class="back">
+              <p class="condition-card-p">You are ensnared. Being entangled impedes your movement but does not entirely prevent you from moving unless the bonds are anchored to an immobile object or tethered by an opposing force. You move at half speed, you cannot run or charge, and you take a -2 penalty to your AC, attack rolls, Reflex saving throws, initiative checks, and Dexterity-based skill and ability checks.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/exhausted.png" class="front-image">
+            <h1 class="card-title">Exhausted</h1>
+            <div class="back">
+              <p class="condition-card-p">You move at half speed, you can't run or charge, and you take a -3 penalty to your Armor Class, attack rolls, melee damage rolls, thrown weapon damage rolls that add Strength to damage, Reflex saving throws, initiative checks, and Strength- and Dexterity-based skill and ability checks. The amount of bulk you can carry without becoming encumbered is reduced by 3. After 1 hour of complete rest, you instead become fatigued.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/fascinated.png" class="front-image">
+            <h1 class="card-title">Fascinated</h1>
+            <div class="back">
+              <p class="condition-card-p">You are entranced. While fascinated, you stand or sit quietly, taking no actions other than to pay attention to the fascinating effect, for as long as the effect lasts. You take a -4 penalty to checks made passively in response to others' actions, such as Perception checks. Any potential threat, such as a hostile creature approaching, grants a new saving throw against the fascinating effect. Any obvious threat, such as someone casting a spell or aiming a ranged weapon at you, automatically ends the condition. Allies can shake you free of the effect and end the condition as a standard action.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/fatigued.png" class="front-image">
+            <h1 class="card-title">Fatigued</h1>
+            <div class="back">
+              <p class="condition-card-p">You can neither run nor charge, and you take a -1 penalty to your Armor Class, attack rolls, melee damage rolls, thrown weapon damage rolls that add Strength to damage, Reflex saving throws, initiative checks, and Strength- and Dexterity-based skill and ability checks. The amount of bulk you can carry without becoming encumbered is reduced by 1. If you are already fatigued and would gain the fatigued condition, you lose the fatigued condition and are exhausted for the total duration of all fatiguing effects. After 8 hours of complete rest, you are no longer fatigued.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/flatFooted.png" class="front-image">
+            <h1 class="card-title">Flat Footed</h1>
+            <div class="back">
+              <p class="condition-card-p">At the start of a combat, if you are surprised, you are flat-footed until you become aware of combat and have had a chance to act. Many other effects can cause you to become flat-footed. You take a -2 penalty to your AC and cannot take reactions while flat-footed.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/frightened.png" class="front-image">
+            <h1 class="card-title">Frightened</h1>
+            <div class="back">
+              <p class="condition-card-p">You flee from the source of your fear as best you can. If you are unable to flee, you can instead fight. You take a -2 penalty to ability checks, attack rolls, saving throws, and skill checks. You can use special abilities, including spells, to flee; indeed, you must use such means if they are the only way you have to escape while you are frightened. If you are already frightened and become subject to an additional effect that would cause you to be frightened, the duration of the frightened condition increases by the duration of the second effect.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/grappled.png" class="front-image">
+            <h1 class="card-title">Grappled</h1>
+            <div class="back">
+              <p class="condition-card-p">You are restrained by a creature, effect, or trap. You can't move, and you take a -2 penalty to your Armor Class, attack rolls, Reflex saving throws, initiative checks, and Dexterity-based skill and ability checks, except those made to grapple your opponent in turn or to escape a grapple (see Grapple on page 246). In addition, you can't take actions that require two hands (or other limbs) to perform. You can't make attacks of opportunity.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/helpless.png" class="front-image">
+            <h1 class="card-title">Helpless</h1>
+            <div class="back">
+              <p class="condition-card-p">You are bound, sleeping, unconscious, or otherwise completely at an opponent's mercy. You are treated as having a Dexterity of 0 (making your Dexterity modifier -5), and melee attacks against you gain an additional +4 bonus (equivalent to attacking a prone target). Ranged attacks get no special bonus against you.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/nuaseated.png" class="front-image">
+            <h1 class="card-title">Nauseated</h1>
+            <div class="back">
+              <p class="condition-card-p">You are experiencing stomach distress. You can't attack, cast spells, concentrate on spells, or do anything else requiring attention. The only action you can take is a single move action per turn.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/offKilter.png" class="front-image">
+            <h1 class="card-title">Off Kilter</h1>
+            <div class="back">
+              <p class="condition-card-p">You are disoriented and floating in zero gravity. You can't take move actions to move your speed, crawl, or take a guarded step. You are flat-footed and take a -2 penalty to attack rolls.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/offTarget.png" class="front-image">
+            <h1 class="card-title">Off Target</h1>
+            <div class="back">
+              <p class="condition-card-p">Your battle concentration is thrown off. You take a -2 penalty to attack rolls while off-target.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/overburdened.png" class="front-image">
+            <h1 class="card-title">Overburdened</h1>
+            <div class="back">
+              <p class="condition-card-p">All of your speeds are reduced to 5 feet, your maximum Dexterity bonus to your Armor Class is reduced to +0, and you take a -5 penalty to Strength- and Dexterity-based checks (or your armor's armor check penalty, whichever is worse).</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/panicked.png" class="front-image">
+            <h1 class="card-title">Panicked</h1>
+            <div class="back">
+              <p class="condition-card-p">You drop everything you are holding and flee at top speed along a random path away from the source of your fear, as well as from any other dangers you encounter. You can't take any other actions. In addition, you take a -2 penalty to all ability checks, saving throws, and skill checks. If cornered, you cower and don't attack, typically using the total defense action in combat and nothing else. You can use special abilities, including spells, to flee; indeed, you must use such means if they are the only way you have to escape.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/paralysed.png" class="front-image">
+            <h1 class="card-title">Paralysed</h1>
+            <div class="back">
+              <p class="condition-card-p">You are frozen and unable to move your body except to squirm slightly, move your eyes etc. You aren't helpless, though you have a Dexterity modifier of -5. You can take purely mental actions but no physical actions. If you are flying in the air when you become paralyzed and your flight is dependent on physical means (such as wings), you fall. If you are swimming when you become paralyzed, you could drown (see Suffocation and Drowning on page 404). A creature can move through a space you occupy, whether or not it is your ally. Each square you occupy counts as 2 squares to move through.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/pinned.png" class="front-image">
+            <h1 class="card-title">Pinned</h1>
+            <div class="back">
+              <p class="condition-card-p">While pinned, you can't move and are flat-footed. -4 penalty to Armor Class, attack rolls, Reflex saves, initiative, and Dexterity-based skill/ability checks. Penalties replace those from the grappled condition and apply to attempts to grapple or free yourself. Limited in actions, can't use limbs, but can attempt to free yourself. Can't make attacks of opportunity while pinned, but can still take verbal/mental actions, such as spellcasting.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/prone.png" class="front-image">
+            <h1 class="card-title">Prone</h1>
+            <div class="back">
+              <p class="condition-card-p">You are lying on the ground. You take a -4 penalty to melee attack rolls. You gain a +4 bonus to your Armor Class against ranged attacks, but you take a -4 penalty to your Armor Class against melee attacks. Standing up from prone is a move action.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/shaken.png" class="front-image">
+            <h1 class="card-title">Shaken</h1>
+            <div class="back">
+              <p class="condition-card-p">You take a -2 penalty to attack rolls, saving throws, skill checks, and ability checks while you have the shaken condition. If you are already shaken and then become subject to an additional effect that would cause you to be shaken, the duration of the shaken condition increases by the duration of the second effect.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/sickened.png" class="front-image">
+            <h1 class="card-title">Sickened</h1>
+            <div class="back">
+              <p class="condition-card-p">You take a -2 penalty to attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/stable.png" class="front-image">
+            <h1 class="card-title">Stable</h1>
+            <div class="back">
+              <p class="condition-card-p">If you were dying but spent Resolve Points to stabilize (see Using Resolve Points beginning on page 250 in Injury and Death), or if you received healing from an ally, you are stable. You are no longer dying, but you are still unconscious.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/staggered.png" class="front-image">
+            <h1 class="card-title">Staggered</h1>
+            <div class="back">
+              <p class="condition-card-p">You can take a single move action or standard action each round, but not both, nor can you take full actions. You can still take swift actions, but not reactions.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/stunned.png" class="front-image">
+            <h1 class="card-title">Stunned</h1>
+            <div class="back">
+              <p class="condition-card-p">You drop everything you are holding, you can't take actions, and you are flat-footed.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/unconcious.png" class="front-image">
+            <h1 class="card-title">Unconcious</h1>
+            <div class="back">
+              <p class="condition-card-p">You are knocked out and helpless. Unconsciousness can result from having 0 Hit Points.</p>
+            </div>
+          </div>
+        <!-- Repeat the above for all 35 images -->
+      </div>
+
+    <script>
+    /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            }
+        
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            }
+    </script>
+</body>
+</html>

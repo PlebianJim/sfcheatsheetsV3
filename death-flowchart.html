@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <title>Death</title>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="conditions.html">Conditions</a>
+        <a href="skill-actions.html">Skill Actions</a>
+        <a href="initiative-tracker.html">Initiative Tracker</a>
+        <a href="death-flowchart.html">Death</a>
+    </div>
+      
+      <!-- Use any element to open the sidenav -->
+      
+    <div class="home-icon-flex-container">
+        <img class="menu-button" src="images/menu-pop-out.png" onclick="openNav()">
+        <a href="index.html"><img class="home-button" src="images/absalom-station-home-icon.png" alt="home-icon"></a>
+    </div>
+    
+    <div class="death-flowchart-container">        
+        <div id="question">Are you taking anymore damage?</div>
+        <button class="death-flowchart-button" id="yes-button">Yes</button>
+        <button class="death-flowchart-button" id="no-button">No</button>
+        <button class="death-flowchart-button" id="reset-button">Reset</button>
+    </div>
+
+    
+
+    <script>
+        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            }
+        
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            }
+        
+        /* Death Flowchart */
+        const questions = {
+            "Are you taking more damage?": {
+                yes: "Do you have any stamina left?",
+                no: "Are you stable?"
+            },
+            "Do you have any stamina left?": {
+                yes: "Lose your stamina first. Is there leftover damage?",
+                no: "Is the damage greater than your maximum HP?"
+            },
+            "Lose your stamina first. Is there leftover damage?": {
+                yes: "Is it more damage than your maximum HP?",
+                no: "You are still alive. End your turn"
+            },
+            "Is it more damage than your maximum HP?": {
+                yes: "You have died. There are ways to return your soul to your body but time is of the essence...",
+                no: "Is this the first damage you are taking on this round?"
+            },
+            "Is this the first damage you are taking on this round?": {
+                yes: "You need to use 1 RP to stay in the fight. Do you have 1 RP",
+                no: "Is the damage greater than half of your maximum HP?"
+            },
+            "You need to use 1 RP to stay in the fight. Do you have 1 RP": {
+                yes: "Reduce your RP by 1 and then end your turn",
+                no: "You die. I'm so sorry"
+            },
+            "Is the damage greater than half of your maximum HP?": {
+                yes: "You will need to use 1 RP to mitigate the damage. Do you have 1 RP?",
+                no: "You are lucky. Nothing happens. End your turn and prepare for the next round"
+            },
+            "You will need to use 1 RP to mitigate the damage. Do you have 1 RP?": {
+                yes: "Use the 1 RP to mitigate the worst of the damage and then end your turn",
+                no: "If you do not have enough RP then your character sinks into the sweet embrace of death"
+            },
+            "Is the damage greater than your maximum HP?": {
+                yes: "You have died. The trauma was too much for your squidgy body. If you are intent on returning, it may be time for the party to start looking into the mystic arts..",
+                no: "Is this the first time you are taking damage this round?"
+            },
+            "Is this the first time you are taking damage this round?": {
+                yes: "If you have enough RP, lose 1 RP. Do you have enough?",
+                no: "Are you taking more than half of your maximum HP?"
+            },
+            "If you have enough RP, lose 1 RP. Do you have enough?": {
+                yes: "Lose 1 RP and end your turn",
+                no: "If you have no resolve to stay in the fight, you have died. May Triune have mercy on your motherboard"
+            },
+            "Are you taking more than half of your maximum HP?": {
+                yes: "Use one of your RP to hold on for a little longer. Do you have 1 RP available?",
+                no: "Luckily, nothing happens this turn. Prepare for the next round..."
+            },
+            "Use one of your RP to hold on for a little longer. Do you have 1 RP available?": {
+                yes: "Use it. You have to use it to survive!",
+                no: "You died doing what you loved"
+            },
+            "Are you stable?": {
+                yes: "Do you have at least 1 RP?",
+                no: "Do you have a quarter or more of your maximum RP?"
+            },
+            "Do you have at least 1 RP?": {
+                yes: "Stay in the fight! Use 1 RP to recover 1 HP and regain consciousness",
+                no: "Is anyone in your party a medic? A Healer?! Can they help you before 1 hour passes?"
+            },
+            "Is anyone in your party a medic? A Healer?! Can they help you before 1 hour passes?": {
+                yes: "They need to help you STAT! Do what you have to do to survive until they can get to you",
+                no: "You will need to check how much punishment you can take before giving up. Roll a constitution check. Was it 20 or higher?"
+            },
+            "You will need to check how much punishment you can take before giving up. Roll a constitution check. Was it 20 or higher?": {
+                yes: "Thank the Gods. Gain 1HP and regain consciousness. End your turn and prepare for the next",
+                no: "Ok, not the end of the world just yet. Was the roll between 10 and 19?"
+            },
+            "Ok, not the end of the world just yet. Was the roll between 10 and 19?": {
+                yes: "You remain just stable enough to hold on. You can roll this constitution check again after an hour has passed. Or if there's a party member who has any working knowledge of medicine...",
+                no: "You have died. Your name will live on in the stories told of your heroism"
+            },
+            "Do you have a quarter or more of your maximum RP?": {
+                yes: "Stabilize yourself by spending a quarter of your total RP. Minimum of 1, maximum of 3. End your turn and prepare for the next assault..",
+                no: "Are there any party members trained in medicine who can attempt to stabilize you? Before the end of the turn?"
+            },
+            "Are there any party members trained in medicine who can attempt to stabilize you? Before the end of the turn?": {
+                yes: "Get them to help you ASAP",
+                no: "You will lose 1 RP at the end of your turn. Do you have enough RP to lose?"
+            },
+            "Get them to help you ASAP": {
+                yes: "You are stable. End your turn",
+                no: "You will lose 1 RP at the end of your turn. Do you have enough RP to lose?"
+            },
+            "You will lose 1 RP at the end of your turn. Do you have enough RP to lose?": {
+                yes: "Lose RP and restart process",
+                no: "Dead"
+            }
+            }
+
+            
+            let currentQuestion = "Are you taking more damage?";
+            document.getElementById("question").innerHTML = currentQuestion;
+
+            document.getElementById("yes-button").addEventListener("click", () => {
+            const nextQuestion = questions[currentQuestion].yes;
+            if (nextQuestion) {
+                currentQuestion = nextQuestion;
+                document.getElementById("question").innerHTML = currentQuestion;
+            } else {
+                alert("End of tree reached. Press reset to start over.");
+            }
+            });
+
+            document.getElementById("no-button").addEventListener("click", () => {
+            const nextQuestion = questions[currentQuestion].no;
+            if (nextQuestion) {
+                currentQuestion = nextQuestion;
+                document.getElementById("question").innerHTML = currentQuestion;
+            } else {
+                alert("End of tree reached. Press reset to start over.");
+            }
+            });
+
+            document.getElementById("reset-button").addEventListener("click", () => {
+            currentQuestion = "Are you taking more damage?";
+            document.getElementById("question").innerHTML = currentQuestion;
+            });
+    </script>
+</body>
+</html>

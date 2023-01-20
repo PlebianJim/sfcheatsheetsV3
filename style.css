@@ -1,0 +1,474 @@
+/************************************************** Universal selectors **************************************************/ 
+
+* {
+    font-family: "Audiowide", sans-serif;
+}
+
+body {
+  background: rgb(2,2,3);
+  background: -moz-linear-gradient(90deg, rgba(2,2,3,1) 0%, rgba(0,35,96,1) 74%, rgba(254,254,254,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(2,2,3,1) 0%, rgba(0,35,96,1) 74%, rgba(254,254,254,1) 100%);
+  background: linear-gradient(90deg, rgba(2,2,3,1) 0%, rgba(0,35,96,1) 74%, rgba(254,254,254,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020203",endColorstr="#fefefe",GradientType=1);
+}
+
+/************************************************** Side bar **************************************************/
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 10%;
+    left: 0;
+    background-color: transparent; /* Transparent*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: -50px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .closebtn:hover {
+    cursor: pointer;
+    animation: bounce 1s infinite;
+  
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  /* The home icon */
+
+  .home-icon-flex-container {
+    display: flex;
+    gap: 35%;
+  }
+
+  .home-button {
+    width: 27%;
+    margin-left: 12%;
+  }
+
+ .home-button:hover {
+  cursor: pointer;
+  animation: bounce 1s infinite;
+ }
+
+  /* The menu icon */
+
+  .menu-button {
+    width: 5%;
+  }
+
+  .menu-button:hover {
+    cursor: pointer;
+    animation: bounce 1s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-5px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+/************************************************** Infosphere Blog **************************************************/
+
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.blog-header {
+  color: whitesmoke;
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: transparent;
+  display: flex;
+  margin: 1%;
+  align-items: center;
+}
+
+.blog-post {
+  color: whitesmoke;
+  display: flex;
+  border: 1px solid white;
+  margin: 2%;
+  padding: 1% 10%;
+}
+
+.blog-card {
+  color: whitesmoke;
+}
+
+.blog-h2 {
+  color: whitesmoke;
+
+}
+
+.blog-h5 {
+  color: whitesmoke;
+}
+
+.blog-p {
+  color: whitesmoke;
+}
+
+/************************************************** Index page TYPING EFFECT **************************************************/
+
+.the-story-so-far-container {
+  display: flex;
+  margin: 10% 40%;
+}
+
+.the-story-so-far {
+  height: 100vh;
+  width: 22ch;
+  /*This part is important for centering*/
+  place-items: center;
+}
+
+.typewriter-effect-story-so-far {
+  width: 22ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+.typewriter-effect-story-so-far:hover {
+  animation: bounce 1s infinite;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/************************************************** INFOSPHERE TYPING EFFECT **************************************************/
+
+
+.typewriter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; /* Adjust to desired height */
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: 80%;
+}
+
+.typewriter {
+  white-space: pre-wrap; /* Keeps text from flowing over */
+  font-family: monospace; /* Optional */
+  position: relative; /* Add position relative */
+  animation: typing 5s steps(1000, end) forwards; /* Adjust animation duration as desired */
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: larger;
+}
+
+/* Keyframe animation for the typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/************************************************** Initiative Tracker **************************************************/
+
+.initiative-tracker-container {
+  display:flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  margin: 5% auto;
+}
+
+
+#initiative-tracker-table {
+  border-collapse: collapse; /* collapse the borders of the table cells */
+  width: 50%; /* set the width of the table to 100% */
+  background-color: transparent;
+}
+th, td {
+  text-align: left; /* align the text in the table cells to the left */
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+/************************************************** Skill action Accordian **************************************************/
+
+.accordian-container {
+  margin: 0% auto;
+  display: flex;
+  flex-direction: column;
+} 
+  
+.accordion {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0.3%;
+  width: 10%;
+  text-align: center;
+  transition: 0.4s;
+  align-self: center;
+  font-family: "Audiowide", sans-serif;
+  border: transparent;
+  font-size: 25px;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: transparent white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  animation: bounce 1.5s;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: transparent;
+  display: none;
+  overflow: hidden;
+  font-family: "Audiowide", sans-serif;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 15px;
+}
+
+.skills-table {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.skill-actions-titles {
+  color: #05abe7;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.skill-actions-subtitle {
+  color: #f97a37;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* Skill action Search bar */
+
+/************************************************** Conditions **************************************************/
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  margin: 5% auto auto auto;
+}
+
+.card {
+  width: 30vh;
+  height: 30vh;
+  perspective: 1000px;
+  margin: 2%;
+}
+
+.card-title {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+.front-image {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+  position: absolute;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: transform 0.6s ease-in-out;
+  position: absolute;
+  background: transparent;
+}
+
+.condition-card-p {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 1.5vh;
+}
+
+.card:hover .front-image {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-title {
+  opacity: 0;
+}
+
+.card:hover .back {
+  transform: rotateY(360deg);
+}
+
+/************************************************** Death flowchart **************************************************/
+
+.death-flowchart-container {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  align-self: center;
+  margin: 10% auto;
+}
+
+#question {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  padding: 5%;;
+}
+
+.death-flowchart-button {
+  font-size: 16px;
+  margin: 2%;
+  padding: 2%;
+  border: none;
+}
+
+#yes-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  border-radius: 150px;
+}
+
+#yes-button:active {
+  background-color: #05abe7;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#no-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  border-radius: 150px;
+}
+
+#no-button:active {
+  background-color: #05abe7;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#reset-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  border-radius: 150px;
+}
+
+#reset-button:active {
+  background-color: #05abe7;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
